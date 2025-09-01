@@ -13,14 +13,14 @@ export const projects: Project[] = [
   {
     title: "Plataforma Institucional - ESJB",
     description: "Desenvolvi a plataforma para ESJB  modernizar a sua comunicação e aumentar a visibilidade online. ",
-    image: "/projeto1.png",
+    image: "https://res.cloudinary.com/dzdyokoiv/image/upload/v1756758488/ESJB_frontend/q1bcisz3fammv4eeplar.png",
     tech: ["Next.js", "React", "TypeScript"],
     demo: "https://teste.esjorgebarbosa.cv/",
   },
   {
     title: "Click Food - Landing Page",
     description: "Plataforma de entrega e pedido de comida online com design moderno e funcional",
-    image: "/projeto2.png",
+    image: "https://res.cloudinary.com/dzdyokoiv/image/upload/v1756758492/ESJB_frontend/faqinkwtqzelc8pcompe.png",
     tech: ["Html-css", "React", "Framer Motion"],
     demo: "https://clickfood.netlify.app/html/inicio",
   },

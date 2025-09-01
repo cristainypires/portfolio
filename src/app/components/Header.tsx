@@ -27,7 +27,7 @@ export default function Header() {
         {/* Logo */}
         <div className="flex items-center flex-shrink-0">
           <img
-            src="/logo.png"
+            src="https://res.cloudinary.com/dzdyokoiv/image/upload/v1756758478/ESJB_frontend/axiumxx2idsthkdg8ogo.jpg"
             className="rounded-full"
             width={60}
             height={60}

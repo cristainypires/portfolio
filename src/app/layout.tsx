@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Cristiany Pires",
   description: "Portfólio de Cristiany Pires - Desenvolvedora Web",
   icons: {
-    icon: "/logo1.png",
+    icon: "https://res.cloudinary.com/dzdyokoiv/image/upload/v1756758480/ESJB_frontend/do7mvcltaq15zhw14y1g.png",
   },
 };
 
