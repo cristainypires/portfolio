@@ -22,7 +22,7 @@ export const projects: Project[] = [
     description: "Plataforma de entrega e pedido de comida online com design moderno e funcional",
     image: "https://res.cloudinary.com/dzdyokoiv/image/upload/v1756758492/ESJB_frontend/faqinkwtqzelc8pcompe.png",
     tech: ["Html-css", "React", "Framer Motion"],
-    demo: "https://clickfood.netlify.app/html/inicio",
+ 
   },
   
 ];
