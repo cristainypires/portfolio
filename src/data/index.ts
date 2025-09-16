@@ -18,12 +18,14 @@ export const projects: Project[] = [
     demo: "https://teste.esjorgebarbosa.cv/",
   },
   {
-    title: "Click Food - Landing Page",
-    description: "Plataforma de entrega e pedido de comida online com design moderno e funcional",
-    image: "https://res.cloudinary.com/dzdyokoiv/image/upload/v1756758492/ESJB_frontend/faqinkwtqzelc8pcompe.png",
-    tech: ["Html-css", "React", "Framer Motion"],
- 
+    title: "lodia Onariso- Landing Page",
+    description: "Landing page para uma Contabilista e Consultora  Financeira.",
+    image: "https://res.cloudinary.com/dzdyokoiv/image/upload/v1758039950/ESJB_frontend/syslhnatxurwy81krned.png",
+    tech: ["TypeScript", "React", "Framer Motion"],
+    demo: "https://lodiaonariso.cv/",
   },
+  
+  
   
 ];
 
