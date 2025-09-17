@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cristiany Pires - Portfólio",
     description: "Portfólio oficial de Cristiany Pires.",
-    images: ["https://cristianypires.cv/imagem-preview.png"],
+    images: ["https://res.cloudinary.com/dzdyokoiv/image/upload/v1756758480/ESJB_frontend/do7mvcltaq15zhw14y1g.png"],
   },
   icons: {
     icon: "https://res.cloudinary.com/dzdyokoiv/image/upload/v1756758480/ESJB_frontend/do7mvcltaq15zhw14y1g.png",
