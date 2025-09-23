@@ -242,7 +242,10 @@ export default function HomePage() {
         Contacte-me
       </h2>
       <p className="text-base sm:text-lg">
-        Tens um projeto em mente? Queres saber como posso ajudar a tua marca?
+        Tens um projeto em mente?
+        <br />
+        Queres saber como posso ajudar a tua marca?
+        <br />
         Envie uma mensagem e responderei rapidamente!
       </p>
 
