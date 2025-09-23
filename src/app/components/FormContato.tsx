@@ -47,6 +47,7 @@ const FormContato = () => {
       onSubmit={handleSubmit}
       className="bg-white rounded-2xl p-6 space-y-5 "
     >
+      <div className="md:pt-20 space-y-5">
       <div>
         <label className="block text-sm font-medium text-[#072F4B]">Nome</label>
         <input
@@ -92,6 +93,7 @@ const FormContato = () => {
           {status}
         </p>
       )}
+      </div>
     </form>
   );
 };
