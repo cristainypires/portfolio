@@ -52,4 +52,5 @@ export const contactInfo = [
     { icon: Mail, value: "cristianypires4@gmail.com", href: "mailto:cristianypires4@gmail.com" },
     { icon: Phone, value: "+238 586 43 79", href: "tel:+238586043079" },
     { icon: MapPin, value: "Cabo Verde", href: "#" },
+   
 ]

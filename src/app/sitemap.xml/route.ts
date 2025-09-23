@@ -1,6 +1,9 @@
 // src/app/sitemap.xml/route.ts
 import { NextResponse } from "next/server";
 
+// Força o sitemap a ser gerado estaticamente no build
+export const dynamic = "force-static";
+
 export async function GET() {
   const baseUrl = "https://cristianypires.cv";
   const pages = ["", "/about", "/projects", "/contact"]; // todas as páginas que quer indexar

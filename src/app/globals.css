@@ -2,31 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+@tailwind utilities;
+
+/* Se você tinha componentes personalizados antes, use @layer components */
+@layer components {
+  .text-claro { color: var(--cor-claro); }
+  .text-azul-escuro { color: var(--cor-azul-escuro); }
+  .bg-azul-escuro { background-color: var(--cor-azul-escuro); }
+}
+
+/* Variáveis globais */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #fffbfb;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-:root {
   --color-light-gray: #e3e4ec;
   --color-blue-gray: #45657B;
   --color-soft-blue-gray: #CCD0E0;
@@ -35,7 +26,28 @@ body {
   --color-black: #000000;
 }
 
-.text-claro { color: var(--cor-claro); }
-.text-azul-escuro { color: var(--cor-azul-escuro); }
-.bg-azul-escuro { background-color: var(--cor-azul-escuro); }
+/* Tema dark */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #fffbfb;
+    --foreground: #ededed;
+  }
+}
 
+/* Fontes e cores do body */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Seu @theme inline pode continuar */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Import do FontAwesome */
+@import "@fortawesome/fontawesome-free/css/all.min.css";

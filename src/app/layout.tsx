@@ -2,9 +2,14 @@
 import type { Metadata } from "next";
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
-import "./globals.css";
+import './globals.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+
+
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://cristianypires.cv"), // 🔥 evita o warning do Next
   title: "Cristiany Pires",
   description: "Portfólio de Cristiany Pires - Desenvolvedora Web",
   keywords: ["Cristiany", "Cristiany Pires", "Portfólio", "Desenvolvedor Web", "Cabo Verde"],

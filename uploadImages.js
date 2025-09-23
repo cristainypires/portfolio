@@ -1,55 +1,41 @@
 import { v2 as cloudinary } from "cloudinary";
 import fs from "fs";
 import path from "path";
-import url from "url";
+import { fileURLToPath } from "url";
 
 // ✅ Configuração do Cloudinary
 cloudinary.config({
-  cloud_name: "dzdyokoiv", // Teu Cloud Name
-  api_key: "946726721337646", // Tua API Key
-  api_secret: "-j4ImyiKokwoyDuPn8QJNrh9hTw" // Teu API Secret completo
+  cloud_name: "dzdyokoiv",
+  api_key: "946726721337646",
+  api_secret: "-j4ImyiKokwoyDuPn8QJNrh9hTw",
 });
 
-// ✅ Pega o caminho da pasta public
-const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
-const publicPath = path.join(__dirname, "public");
+// ✅ Pega o caminho da imagem específica
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const imagePath = path.join(__dirname, "public/https://res.cloudinary.com/dzdyokoiv/image/upload/v1758584023/cristiany/ceo1muzhiswzjupccokq.png");
 
 // ✅ Onde salvar o JSON de links
 const linksFile = path.join(__dirname, "links.json");
 
-// Objeto para armazenar os links
-let allLinks = {};
+// 🚀 Função para enviar apenas uma imagem
+async function uploadImage(filePath) {
+  try {
+    const result = await cloudinary.uploader.upload(filePath, {
+      folder: "cristiany", // pasta no Cloudinary
+    });
 
-// 📌 Função recursiva para percorrer a pasta public
-async function uploadFolder(localFolder, cloudFolder = "") {
-  const files = fs.readdirSync(localFolder);
-
-  for (const file of files) {
-    const filePath = path.join(localFolder, file);
-    const cloudinaryPath = cloudFolder ? `${cloudFolder}/${file}` : file;
-
-    if (fs.statSync(filePath).isDirectory()) {
-      await uploadFolder(filePath, cloudinaryPath);
-    } else {
-      try {
-        const result = await cloudinary.uploader.upload(filePath, {
-          folder: `ESJB_frontend/${cloudFolder}`, // Mantém a estrutura
-        });
-
-        const relativePath = path.relative(publicPath, filePath).replace(/\\/g, "/");
-        allLinks[relativePath] = result.secure_url;
-
-        console.log(`✅ ${relativePath} → ${result.secure_url}`);
-      } catch (err) {
-        console.error(`❌ Erro ao enviar ${file}:`, err.message);
-      }
-    }
+    const link = result.secure_url;
+    fs.writeFileSync(
+      linksFile,
+      JSON.stringify({ [path.basename(filePath)]: link }, null, 2)
+    );
+    console.log(`✅ ${path.basename(filePath)} → ${link}`);
+    console.log(`📁 Link salvo em: ${linksFile}`);
+  } catch (err) {
+    console.error(`❌ Erro ao enviar ${filePath}:`, err.message);
   }
 }
 
-// 🚀 Executa o upload e salva o JSON
-(async () => {
-  await uploadFolder(publicPath);
-  fs.writeFileSync(linksFile, JSON.stringify(allLinks, null, 2));
-  console.log(`\n📁 Links salvos em: ${linksFile}`);
-})();
+// 🏁 Executa o upload
+uploadImage(imagePath);

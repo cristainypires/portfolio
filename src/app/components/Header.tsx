@@ -3,7 +3,8 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Link, Menu, X } from "lucide-react";
+
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,25 +19,27 @@ export default function Header() {
 
   return (
     <motion.header
-      className="fixed top-0 left-6 right-6 rounded-lg z-50 text-[var(--cor-preto)] backdrop-blur border border-[var(--cor-azul-escuro)] bg-[var(--cor-claro)]/80 shadow-lg"
+      className="fixed top-0 left-6 right-6 rounded-lg z-50 text-[var(--cor-preto)] backdrop-blur border border-[var(--cor-azul-escuro)] bg-[var(--cor-claro)]/80"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <div className="container-pro flex items-center justify-between h-16 px-4 sm:px-6 lg:px-20">
         {/* Logo */}
+        <a href="#home" className="hover:opacity-99 transition-opacity">
         <div className="flex items-center flex-shrink-0">
           <img
-            src="https://res.cloudinary.com/dzdyokoiv/image/upload/v1756758478/ESJB_frontend/axiumxx2idsthkdg8ogo.jpg"
-            className="rounded-full"
-            width={60}
-            height={60}
+            src="https://res.cloudinary.com/dzdyokoiv/image/upload/v1758584023/cristiany/ceo1muzhiswzjupccokq.png"
+            className=""
+            width={90}
+            height={90}
             alt="Logo"
           />
-          <h1 className="ml-2 text-lg sm:text-xl font-bold text-[#072F4B]">
+          <h1 className="ml-2 mr-100 text-lg sm:text-xl font-bold text-[#072F4B]">
             CP Technology
           </h1>
         </div>
+        </a>
 
         {/* Navegação Desktop */}
         <nav className="hidden md:flex flex-1 justify-center gap-8 lg:gap-10 text-lg lg:text-xl">
