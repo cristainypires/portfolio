@@ -8,7 +8,6 @@ import Header from "./components/Header";
 import { projects, services, contactInfo } from "@/data";
 import Link from "next/link";
 
-
 import FormContato from "./components/FormContato";
 
 const containerVariants = {
@@ -19,15 +18,14 @@ const containerVariants = {
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
-
 };
-  const navlinks = [
-    { label: "Home", href: "#home" },
-    { label: "Sobre", href: "#sobre" },
-    { label: "Projetos", href: "#projetos" },
-    { label: "Serviços", href: "#servicos" },
-    { label: "Contato", href: "#contato" },
-  ];
+const navlinks = [
+  { label: "Home", href: "#home" },
+  { label: "Sobre", href: "#sobre" },
+  { label: "Projetos", href: "#projetos" },
+  { label: "Serviços", href: "#servicos" },
+  { label: "Contato", href: "#contato" },
+];
 
 export default function HomePage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -163,7 +161,7 @@ export default function HomePage() {
               {projects.map((p) => (
                 <motion.div
                   key={p.title}
-                  className="rounded-xl overflow-hidden"
+                  className="rounded-xl overflow-hidden pb-10"
                   variants={itemVariants}
                 >
                   <ProjectCard
@@ -200,141 +198,136 @@ export default function HomePage() {
               O que posso fazer para elevar o teu projeto ao próximo nível
             </p>
 
-           <motion.div
-  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
-  variants={containerVariants}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
->
-  {services.map((s) => (
-    <div
-      key={s.title} // ← mover o key para cá
-      className="transform transition-transform hover:scale-105 hover:-translate-y-1"
-    >
-      <motion.div
-        variants={itemVariants}
-        className="p-4 sm:p-6 md:p-8 bg-white rounded-3xl border border-[#05253c] shadow-lg h-full flex flex-col items-start"
-      >
-        <s.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#45657B] mb-4" />
-        <h3 className="text-lg sm:text-xl font-semibold text-[#05253c] mb-2">
-          {s.title}
-        </h3>
-        <p className="text-black text-sm sm:text-base">
-          {s.description}
-        </p>
-      </motion.div>
-    </div>
-  ))}
-</motion.div>
-
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {services.map((s) => (
+                <div
+                  key={s.title} // ← mover o key para cá
+                  className="transform transition-transform hover:scale-105 hover:-translate-y-1"
+                >
+                  <motion.div
+                    variants={itemVariants}
+                    className="p-4 sm:p-6 md:p-8 bg-white rounded-3xl border border-[#05253c] shadow-lg h-full flex flex-col items-start"
+                  >
+                    <s.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#45657B] mb-4" />
+                    <h3 className="text-lg sm:text-xl font-semibold text-[#05253c] mb-2">
+                      {s.title}
+                    </h3>
+                    <p className="text-black text-sm sm:text-base">
+                      {s.description}
+                    </p>
+                  </motion.div>
+                </div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
         {/* CONTATO */}
         <section id="contato" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
-  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-    
-    {/* Texto + Info */}
-    <div className="space-y-6 text-black">
-      
-      <h2 className="text-3xl sm:text-5xl font-extrabold text-[#072F4B]">
-        Contacte-me
-      </h2>
-      <p className="text-base sm:text-lg">
-        Tens um projeto em mente?
-        <br />
-        Queres saber como posso ajudar a tua marca?
-        <br />
-        Envie uma mensagem e responderei rapidamente!
-      </p>
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            {/* Texto + Info */}
+            <div className="space-y-6 text-black">
+              <h2 className="text-3xl sm:text-5xl font-extrabold text-[#072F4B]">
+                Contacte-me
+              </h2>
+              <p className="text-base sm:text-lg">
+                Tens um projeto em mente?
+                <br />
+                Queres saber como posso ajudar a tua marca?
+                <br />
+                Envie uma mensagem e responderei rapidamente!
+              </p>
 
-      {/* Contact Info */}
-      <div className="space-y-3 text-black/80 text-base sm:text-lg">
-        {contactInfo.map((info) => (
-          <a
-            key={info.value}
-            href={info.href}
-            className="flex items-center gap-3 hover:text-gold transition-colors"
-          >
-            <info.icon className="w-5 h-5 sm:w-6 sm:h-6" /> {info.value}
-          </a>
-        ))}
-      </div>
+              {/* Contact Info */}
+              <div className="space-y-3 text-black/80 text-base sm:text-lg">
+                {contactInfo.map((info) => (
+                  <a
+                    key={info.value}
+                    href={info.href}
+                    className="flex items-center gap-3 hover:text-gold transition-colors"
+                  >
+                    <info.icon className="w-5 h-5 sm:w-6 sm:h-6" /> {info.value}
+                  </a>
+                ))}
+              </div>
 
-      {/* Redes Sociais */}
-      <div className="flex gap-5 ">
-        <a
-          href="https://www.facebook.com/cristianyjunior.pires.3"
-          target="_blank"
-          className="text-[#072F4B] hover:text-[#627683] transition-colors"
-        >
-          <i className="fab fa-facebook text-3xl"></i>
-        </a>
-        <a
-          href="https://www.instagram.com/cr1stiany/?__pwa=1"
-          target="_blank"
-          className="text-[#072F4B] hover:text-[#627683] transition-colors"
-        >
-          <i className="fab fa-instagram text-3xl"></i>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/cristiany-pires-9a466b382/"
-          target="_blank"
-          className="text-[#072F4B] hover:text-[#627683] transition-colors"
-        >
-          <i className="fab fa-linkedin text-3xl"></i>
-        </a>
-        
-      </div>
-    </div>
+              {/* Redes Sociais */}
+              <div className="flex gap-5 ">
+                <a
+                  href="https://www.facebook.com/cristianyjunior.pires.3"
+                  target="_blank"
+                  className="text-[#072F4B] hover:text-[#627683] transition-colors"
+                >
+                  <i className="fab fa-facebook text-3xl"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/cr1stiany/?__pwa=1"
+                  target="_blank"
+                  className="text-[#072F4B] hover:text-[#627683] transition-colors"
+                >
+                  <i className="fab fa-instagram text-3xl"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/cristiany-pires-9a466b382/"
+                  target="_blank"
+                  className="text-[#072F4B] hover:text-[#627683] transition-colors"
+                >
+                  <i className="fab fa-linkedin text-3xl"></i>
+                </a>
+              </div>
+            </div>
 
-    {/* Formulário */}
-    <FormContato />
-  </div>
-</section>
-
+            {/* Formulário */}
+            <FormContato />
+          </div>
+        </section>
 
         {/* FOOTER */}
-       <footer className="p-4 sm:p-6 border-t border-[#031c2e] bg-[#031c2e] text-gray-400 text-sm sm:text-base">
-  <div className=" pl-4 pr-4 max-w-full mx-auto flex flex-col md:flex-row items-center md:items-center justify-between gap-6">
-    
-    {/* Logo + Nome */}
-    <Link href="#home" className="hover:opacity-99 transition-opacity">
-    <div className="flex items-center flex-shrink-0">
-      <img
-        src="https://res.cloudinary.com/dzdyokoiv/image/upload/v1758039951/ESJB_frontend/zeazwj0sdobzadmrh686.jpg"
-        className="rounded-md"
-        width={70}
-        height={70}
-        alt="Logo"
-      />
-      <h1 className="ml-4 text-xl text-[#e3e4ec] font-bold">CP Technology</h1>
-    </div>
-    </Link>
+        <footer className="p-4 sm:p-6 border-t border-[#031c2e] bg-[#031c2e] text-gray-400 text-sm sm:text-base">
+          <div className=" pl-4 pr-4 max-w-full mx-auto flex flex-col md:flex-row items-center md:items-center justify-between gap-6">
+            {/* Logo + Nome */}
+            <Link href="#home" className="hover:opacity-99 transition-opacity">
+              <div className="flex items-center flex-shrink-0">
+                <img
+                  src="https://res.cloudinary.com/dzdyokoiv/image/upload/v1758039951/ESJB_frontend/zeazwj0sdobzadmrh686.jpg"
+                  className="rounded-md"
+                  width={70}
+                  height={70}
+                  alt="Logo"
+                />
+                <h1 className="ml-4 text-xl text-[#e3e4ec] font-bold">
+                  CP Technology
+                </h1>
+              </div>
+            </Link>
 
+            {/* Navegação */}
+            <nav className="flex flex-col-2 md:flex-row gap-4 md:gap-8 text-center">
+              {navlinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="md:font-bold hover:text-gray-300 transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </div>
 
-    {/* Navegação */}
-    <nav className="flex flex-col-2 md:flex-row gap-4 md:gap-8 text-center">
-      {navlinks.map((link) => (
-        <a
-          key={link.href}
-          href={link.href}
-          className="md:font-bold hover:text-gray-300 transition-colors"
-        >
-          {link.label}
-        </a>
-      ))}
-    </nav>
-  </div>
-
-  {/* Direitos */}
-  <div className="mt-6 text-center text-gray-400 text-xs sm:text-sm">
-    © {new Date().getFullYear()} Cristiany Pires, Todos os direitos reservados
-  </div>
-</footer>
-
-    </main>
+          {/* Direitos */}
+          <div className="mt-6 text-center text-gray-400 text-xs sm:text-sm">
+            © {new Date().getFullYear()} Cristiany Pires, Todos os direitos
+            reservados
+          </div>
+        </footer>
+      </main>
     </>
   );
 }
