@@ -8,7 +8,9 @@ import Header from "./components/Header";
 import { projects, services, contactInfo } from "@/data";
 import Link from "next/link";
 
+
 import FormContato from "./components/FormContato";
+import DotGrid from "./DotGrid";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -27,6 +29,8 @@ const navlinks = [
   { label: "Contato", href: "#contato" },
 ];
 
+
+
 export default function HomePage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -35,45 +39,60 @@ export default function HomePage() {
       <Header />
       <main className="bg-white text-black font-sans">
         {/* HERO */}
-        <section
-          id="home"
-          className="pt-20 sm:pt-28 pb-10 px-4 sm:px-6 lg:px-8"
+       <section
+      id="home"
+      className="relative pt-20 sm:pt-28 pb-10 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
+      {/* Fundo animado LightRays */}
+   <div className="w-full h-full absolute z-0 top-0 left-0">
+  <DotGrid
+              dotSize={10}
+              gap={10}
+              baseColor="#ffffff"
+              activeColor="#45657B"
+              proximity={120}
+              shockRadius={250}
+              shockStrength={5}
+              resistance={750}
+              returnDuration={1.5} style={undefined}  />
+</div>
+
+      {/* Conteúdo principal */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 items-center relative z-10">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="space-y-6 text-center md:text-left"
         >
-          <div className="max-w-6xl mx-auto grid grid-cols-1 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-6 text-center md:text-left"
+          <p className="text-gold font-semibold pt-10 tracking-wider uppercase text-sm sm:text-base">
+            Engh. Informático & Telecomunicações
+          </p>
+          <h1 className="text-3xl sm:text-5xl lg:text-7xl text-[#072F4B] font-extrabold leading-tight">
+            Transformo ideias em{" "}
+            <span className="text-gold">Websites incríveis</span>
+          </h1>
+          <p className="text-black max-w-2xl mx-auto md:mx-0 leading-relaxed text-base sm:text-lg">
+            Desenvolvo websites profissionais e responsivos. O meu foco é criar
+            a melhor experiência digital para os seus utilizadores.
+          </p>
+          <div className="flex flex-row sm:flex-row flex-wrap gap-4 mt-4 justify-center md:justify-start">
+            <a
+              href="#projetos"
+              className="hover:bg-[#CCD0E0] bg-white border border-[#072F4B] text-[#072F4B] font-bold rounded-lg px-5 py-3 shadow-lg hover:scale-105 transition-transform text-sm sm:text-base text-center"
             >
-              <p className="text-gold font-semibold pt-10 tracking-wider uppercase text-sm sm:text-base">
-                Engh. Informático & Telecomunicações
-              </p>
-              <h1 className="text-3xl sm:text-5xl lg:text-7xl text-[#072F4B] font-extrabold leading-tight">
-                Transformo ideias em{" "}
-                <span className="text-gold">Websites incríveis</span>
-              </h1>
-              <p className="text-black max-w-2xl mx-auto md:mx-0 leading-relaxed text-base sm:text-lg">
-                Desenvolvo websites profissionais e responsivos. O meu foco é
-                criar a melhor experiência digital para os seus utilizadores.
-              </p>
-              <div className="flex flex-row  sm:flex-row flex-wrap gap-4 mt-4 justify-center md:justify-start">
-                <a
-                  href="#projetos"
-                  className="hover:bg-[#CCD0E0] bg-white border border-[#072F4B] text-[#072F4B] font-bold rounded-lg px-5 py-3 shadow-lg hover:scale-105 transition-transform text-sm sm:text-base text-center"
-                >
-                  Ver Projetos
-                </a>
-                <a
-                  href="#contato"
-                  className="hover:bg-white bg-[#CCD0E0] border border-[#072F4B] text-[#072F4B] font-bold rounded-lg px-5 py-3 shadow-lg hover:scale-105 transition-transform text-sm sm:text-base text-center"
-                >
-                  Contacte-me
-                </a>
-              </div>
-            </motion.div>
+              Ver Projetos
+            </a>
+            <a
+              href="#contato"
+              className="hover:bg-white bg-[#CCD0E0] border border-[#072F4B] text-[#072F4B] font-bold rounded-lg px-5 py-3 shadow-lg hover:scale-105 transition-transform text-sm sm:text-base text-center"
+            >
+              Contacte-me
+            </a>
           </div>
-        </section>
+        </motion.div>
+      </div>
+    </section>
 
         <div className="border border-[#072F4B] my-10 max-w-full"></div>
 
