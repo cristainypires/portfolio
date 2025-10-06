@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "./components/ProjectCard";
 import ImageModal from "./components/ImageModal";
@@ -11,6 +11,7 @@ import Link from "next/link";
 
 import FormContato from "./components/FormContato";
 import DotGrid from "./DotGrid";
+import Card from "./card/Card";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -31,8 +32,16 @@ const navlinks = [
 
 
 
-export default function HomePage() {
+export default function Page() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+const [showMyCard, setShowMyCard] = useState(false);
+ useEffect(() => {
+    if (showMyCard) {
+      document.body.style.overflow = "hidden"; // bloqueia scroll
+    } else {
+      document.body.style.overflow = ""; // restaura
+    }
+  }, [showMyCard]);
 
   return (
     <>
@@ -118,6 +127,31 @@ export default function HomePage() {
                 websites de alta performance, modernos e totalmente responsivos,
                 pensados para destacar e valorizar a tua marca no mundo digital.
               </p>
+              <button
+  onClick={() => setShowMyCard(true)}
+  className="text-blue-600 hover:underline"
+>
+  My Card
+</button>
+{showMyCard && (
+  <div
+    className="fixed inset-0 flex items-center justify-center z-50 p-4"
+    onClick={() => setShowMyCard(false)} // clicando no fundo fecha
+  >
+    <div
+      className="relative"
+      onClick={(e) => e.stopPropagation()} // previne fechar quando clicar no card
+    >
+      
+
+      {/* Seu card existente */}
+      <Card />
+    </div>
+  </div>
+)}
+
+
+
               <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
                 Do design ao lançamento, cuido de cada detalhe para garantir um
                 resultado único, impactante e focado em gerar resultados.
@@ -171,7 +205,7 @@ export default function HomePage() {
             </p>
 
             <motion.div
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-15"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -349,4 +383,4 @@ export default function HomePage() {
       </main>
     </>
   );
-}
+} 
