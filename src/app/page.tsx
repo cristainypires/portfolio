@@ -201,7 +201,7 @@ const [showMyCard, setShowMyCard] = useState(false);
               Projetos em destaque
             </h2>
             <p className="text-center text-black p-4 sm:p-5 mb-8 sm:mb-12 text-base sm:text-lg">
-              Alguns trabalhos e demos que mostram o meu estilo e stack.
+              Alguns trabalhos  que mostram o meu estilo e stack.
             </p>
 
             <motion.div
