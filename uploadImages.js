@@ -13,7 +13,7 @@ cloudinary.config({
 // ✅ Pega o caminho da imagem específica
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const imagePath = path.join(__dirname, "public/https://res.cloudinary.com/dzdyokoiv/image/upload/v1758584023/cristiany/ceo1muzhiswzjupccokq.png");
+const imagePath = path.join(__dirname, "public/https://res.cloudinary.com/dzdyokoiv/image/upload/v1761825611/cristiany/riswyekkbv4vd4wkhnts.jpg");
 
 // ✅ Onde salvar o JSON de links
 const linksFile = path.join(__dirname, "links.json");

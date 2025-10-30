@@ -160,10 +160,7 @@ const [showMyCard, setShowMyCard] = useState(false);
                 <li>Criação de websites institucionais e landing pages</li>
                 <li>Design responsivo para todos os dispositivos</li>
                 <li>Experiência otimizada para melhor desempenho</li>
-              </ul>
-            </motion.div>
-
-            <motion.div
+              </ul><motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
@@ -191,6 +188,31 @@ const [showMyCard, setShowMyCard] = useState(false);
                 </div>
               </div>
             </motion.div>
+
+            </motion.div>
+            
+
+           <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 1 }}
+              className="relative flex justify-center md:justify-end"
+            >
+              <div className=" pt-5 ">
+                <img
+                  src="https://res.cloudinary.com/dzdyokoiv/image/upload/v1761825611/cristiany/riswyekkbv4vd4wkhnts.jpg"
+                  alt="Lodia Onariso"
+                  className=" object-cover rounded-3xl "
+                  width={350}
+                  height={250}
+                />
+              </div>
+              <div className="absolute w-48 h-48 sm:w-60 sm:h-60 md:w-96 md:h-96 rounded-full bg-[#072F4B] blur-3xl opacity-30 -right-10 top-1/4 z-0"></div>
+            </motion.div>
+          
+
+            
           </div>
         </section>
 
