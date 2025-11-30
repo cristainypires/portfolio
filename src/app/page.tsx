@@ -8,7 +8,6 @@ import Header from "./components/Header";
 import { projects, services, contactInfo } from "@/data";
 import Link from "next/link";
 
-
 import FormContato from "./components/FormContato";
 import DotGrid from "./DotGrid";
 import Card from "./card/Card";
@@ -30,12 +29,10 @@ const navlinks = [
   { label: "Contato", href: "#contato" },
 ];
 
-
-
 export default function Page() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-const [showMyCard, setShowMyCard] = useState(false);
- useEffect(() => {
+  const [showMyCard, setShowMyCard] = useState(false);
+  useEffect(() => {
     if (showMyCard) {
       document.body.style.overflow = "hidden"; // bloqueia scroll
     } else {
@@ -48,13 +45,13 @@ const [showMyCard, setShowMyCard] = useState(false);
       <Header />
       <main className="bg-white text-black font-sans">
         {/* HERO */}
-       <section
-      id="home"
-      className="relative pt-20 sm:pt-28 pb-10 px-4 sm:px-6 lg:px-8 overflow-hidden"
-    >
-      {/* Fundo animado LightRays */}
-   <div className="w-full h-full absolute z-0 top-0 left-0">
-  <DotGrid
+        <section
+          id="home"
+          className="relative pt-20 sm:pt-28 pb-10 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        >
+          {/* Fundo animado LightRays */}
+          <div className="w-full h-full absolute z-0 top-0 left-0">
+            <DotGrid
               dotSize={10}
               gap={10}
               baseColor="#ffffff"
@@ -63,167 +60,163 @@ const [showMyCard, setShowMyCard] = useState(false);
               shockRadius={250}
               shockStrength={5}
               resistance={750}
-              returnDuration={1.5} style={undefined}  />
-</div>
-
-      {/* Conteúdo principal */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 items-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-6 text-center md:text-left"
-        >
-          <p className="text-gold font-semibold pt-10 tracking-wider uppercase text-sm sm:text-base">
-            Engh. Informático & Telecomunicações
-          </p>
-          <h1 className="text-3xl sm:text-5xl lg:text-7xl text-[#072F4B] font-extrabold leading-tight">
-            Transformo ideias em{" "}
-            <span className="text-gold">Websites incríveis</span>
-          </h1>
-          <p className="text-black max-w-2xl mx-auto md:mx-0 leading-relaxed text-base sm:text-lg">
-            Desenvolvo websites profissionais e responsivos. O meu foco é criar
-            a melhor experiência digital para os seus utilizadores.
-          </p>
-          <div className="flex flex-row sm:flex-row flex-wrap gap-4 mt-4 justify-center md:justify-start">
-            <a
-              href="#projetos"
-              className="hover:bg-[#CCD0E0] bg-white border border-[#072F4B] text-[#072F4B] font-bold rounded-lg px-5 py-3 shadow-lg hover:scale-105 transition-transform text-sm sm:text-base text-center"
-            >
-              Ver Projetos
-            </a>
-            <a
-              href="#contato"
-              className="hover:bg-white bg-[#CCD0E0] border border-[#072F4B] text-[#072F4B] font-bold rounded-lg px-5 py-3 shadow-lg hover:scale-105 transition-transform text-sm sm:text-base text-center"
-            >
-              Contacte-me
-            </a>
+              returnDuration={1.5}
+              style={undefined}
+            />
           </div>
-        </motion.div>
-      </div>
-    </section>
+
+          {/* Conteúdo principal */}
+          <div className="max-w-6xl mx-auto grid grid-cols-1 items-center relative z-10">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6 text-center md:text-left"
+            >
+              <p className="text-gold font-semibold pt-10 tracking-wider uppercase text-sm sm:text-base">
+                Engh. Informático & Telecomunicações
+              </p>
+              <h1 className="text-3xl sm:text-5xl lg:text-7xl text-[#072F4B] font-extrabold leading-tight">
+                Transformo ideias em{" "}
+                <span className="text-gold">Sistemas incríveis</span>
+              </h1>
+              <p className="text-black max-w-2xl mx-auto md:mx-0 leading-relaxed text-base sm:text-lg">
+                Desenvolvo e crio sistemas profissionais e responsivos. O meu
+                foco é criar a melhor experiência digital para os seus
+                utilizadores.
+              </p>
+              <div className="flex flex-row sm:flex-row flex-wrap gap-4 mt-4 justify-center md:justify-start">
+                <a
+                  href="#projetos"
+                  className="hover:bg-[#CCD0E0] bg-white border border-[#072F4B] text-[#072F4B] font-bold rounded-lg px-5 py-3 shadow-lg hover:scale-105 transition-transform text-sm sm:text-base text-center"
+                >
+                  Ver Projetos
+                </a>
+                <a
+                  href="#contato"
+                  className="hover:bg-white bg-[#CCD0E0] border border-[#072F4B] text-[#072F4B] font-bold rounded-lg px-5 py-3 shadow-lg hover:scale-105 transition-transform text-sm sm:text-base text-center"
+                >
+                  Contacte-me
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
         <div className="border border-[#072F4B] my-10 max-w-full"></div>
 
         {/* SOBRE */}
         <section
-          id="sobre"
-          className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8"
-        >
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
-              variants={itemVariants}
-              className="space-y-6"
-            >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#05253c]">
-                Sobre mim
-              </h2>
-              <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
-                Sou <strong>Cristiany Pires</strong>, Engenheiro Informático e
-                de Telecomunicações, desenvolvedor especializado em criar
-                websites de alta performance, modernos e totalmente responsivos,
-                pensados para destacar e valorizar a tua marca no mundo digital.
-              </p>
-              <button
-  onClick={() => setShowMyCard(true)}
-  className="text-blue-600 hover:underline"
+  id="sobre"
+  className="py-6 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 flex flex-col"
 >
-  My Card
-</button>
-{showMyCard && (
-  <div
-    className="fixed inset-0 flex items-center justify-center z-50 p-4"
-    onClick={() => setShowMyCard(false)} // clicando no fundo fecha
-  >
-    <div
-      className="relative"
-      onClick={(e) => e.stopPropagation()} // previne fechar quando clicar no card
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+    
+    {/* COLUNA 1 - TEXTO SOBRE MIM */}
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
+      variants={itemVariants}
+      className="space-y-6"
     >
-      
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#05253c]">
+        Sobre mim
+      </h2>
 
-      {/* Seu card existente */}
-      <Card />
-    </div>
+      <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
+        Sou <strong>Cristiany Pires</strong>, Engenheiro Informático e
+        de Telecomunicações, desenvolvedor especializado em criar
+        sistemas de alta performance...
+      </p>
+
+      <button
+        onClick={() => setShowMyCard(true)}
+        className="text-blue-600 hover:underline"
+      >
+        My Card
+      </button>
+
+      {showMyCard && (
+        <div
+          className="fixed inset-0 flex items-center justify-center z-50 p-4"
+          onClick={() => setShowMyCard(false)}
+        >
+          <div className="relative" onClick={(e) => e.stopPropagation()}>
+            <Card />
+          </div>
+        </div>
+      )}
+
+      <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
+        Do design ao lançamento, cuido de cada detalhe...
+      </p>
+
+      <ul className="space-y-2 text-gray-700 list-disc list-inside text-sm sm:text-base md:text-base">
+        <li>Criação de websites institucionais e landing pages</li>
+        <li>Design responsivo para todos os dispositivos</li>
+        <li>Experiência otimizada para melhor desempenho</li>
+        <li>Foco na usabilidade e satisfação do utilizador</li>
+        <li>Manutenção e suporte contínuos</li>
+      </ul>
+    </motion.div>
+
+    {/* COLUNA 2 - CARD (Qualidade / 100% / Performance) */}
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
+      variants={itemVariants}
+      className="card p-4 sm:p-6 md:p-7 md:mt-10 rounded-3xl flex items-center justify-center bg-[#CCD0E0] shadow-xl h-fit"
+    >
+      <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-6 text-center items-center text-[#05253c]">
+
+        <div>
+          <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gold">
+            Qualidade
+          </p>
+          <p className="text-sm mt-1">Acima de Quantidade</p>
+        </div>
+
+        <div>
+          <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gold">
+            100%
+          </p>
+          <p className="text-sm mt-1">Responsivo</p>
+        </div>
+
+        <div>
+          <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gold">
+            Performance
+          </p>
+          <p className="text-sm mt-1">Sistemas Otimizados</p>
+        </div>
+      </div>
+    </motion.div>
+
   </div>
-)}
 
 
 
-              <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
-                Do design ao lançamento, cuido de cada detalhe para garantir um
-                resultado único, impactante e focado em gerar resultados.
-              </p>
-              <ul className="space-y-2 text-gray-700 list-disc list-inside text-sm sm:text-base md:text-base">
-                <li>Criação de websites institucionais e landing pages</li>
-                <li>Design responsivo para todos os dispositivos</li>
-                <li>Experiência otimizada para melhor desempenho</li>
-              </ul><motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
-              variants={itemVariants}
-              className="card sm:p-6 md:p-8 rounded-3xl flex items-center justify-center bg-[#CCD0E0] shadow-xl"
-            >
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-4 text-center items-center justify-center text-[#05253c]">
-                <div>
-                  <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gold">
-                    Qualidade
-                  </p>
-                  <p className="text-sm mt-1">Acima de Quantidade</p>
-                </div>
-                <div>
-                  <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gold">
-                    100%
-                  </p>
-                  <p className="text-sm mt-1">Responsivo</p>
-                </div>
-                <div>
-                  <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gold">
-                    Performance
-                  </p>
-                  <p className="text-sm mt-1">Sistemas Otimizados</p>
-                </div>
-              </div>
-            </motion.div>
-
-            </motion.div>
-            
-
-           <motion.div
+            <motion.div
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 1 }}
               className="relative flex justify-center md:justify-end"
-            >
-              <div className=" pt-5 ">
-                <img
-                  src="https://res.cloudinary.com/dzdyokoiv/image/upload/v1761825611/cristiany/riswyekkbv4vd4wkhnts.jpg"
-                  alt="Lodia Onariso"
-                  className=" object-cover rounded-3xl "
-                  width={350}
-                  height={250}
-                />
-              </div>
-              <div className="absolute w-48 h-48 sm:w-60 sm:h-60 md:w-96 md:h-96 rounded-full bg-[#072F4B] blur-3xl opacity-30 -right-10 top-1/4 z-0"></div>
-            </motion.div>
-          
-
-            
-          </div>
+            ></motion.div>
+        
         </section>
+        
 
         {/* PROJETOS */}
-        <section id="projetos" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <section id="projetos" className="py-6 sm:py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl sm:text-5xl font-extrabold text-[#072F4B] text-center">
               Projetos em destaque
             </h2>
             <p className="text-center text-black p-4 sm:p-5 mb-8 sm:mb-12 text-base sm:text-lg">
-              Alguns trabalhos  que mostram o meu estilo e stack.
+              Alguns trabalhos que mostram o meu estilo e stack.
             </p>
 
             <motion.div
@@ -264,7 +257,7 @@ const [showMyCard, setShowMyCard] = useState(false);
         </section>
 
         {/* SERVIÇOS */}
-        <section id="servicos" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <section id="servicos" className="py-6 sm:py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl sm:text-5xl text-[#072F4B] font-extrabold text-center">
               Serviços
@@ -405,4 +398,4 @@ const [showMyCard, setShowMyCard] = useState(false);
       </main>
     </>
   );
-} 
+}

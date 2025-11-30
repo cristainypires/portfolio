@@ -12,7 +12,7 @@ const App = () => {
             handle="CP Technology"
             contactText="Contact Me"
             avatarUrl="a.png" 
-            miniAvatarUrl="https://res.cloudinary.com/dzdyokoiv/image/upload/v1758584023/cristiany/ceo1muzhiswzjupccokq.png"
+            miniAvatarUrl="https://res.cloudinary.com/dzdyokoiv/image/upload/v1764540793/cristiany/ceo1muzhiswzjupccokq.png"
             showUserInfo={true}
             enableTilt={true}
             enableMobileTilt={false}

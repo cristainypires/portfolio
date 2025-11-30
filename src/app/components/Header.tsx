@@ -29,7 +29,7 @@ export default function Header() {
         <a href="#home" className="hover:opacity-99 transition-opacity">
         <div className="flex items-center flex-shrink-0">
           <img
-            src="https://res.cloudinary.com/dzdyokoiv/image/upload/v1758584023/cristiany/ceo1muzhiswzjupccokq.png"
+            src="https://res.cloudinary.com/dzdyokoiv/image/upload/v1764540793/cristiany/ceo1muzhiswzjupccokq.png"
             className=""
             width={90}
             height={90}

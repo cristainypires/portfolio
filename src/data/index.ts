@@ -15,7 +15,7 @@ export const projects: Project[] = [
     description: "Desenvolvi a plataforma para ESJB  modernizar a sua comunicação e aumentar a visibilidade online. ",
     image: "https://res.cloudinary.com/dzdyokoiv/image/upload/v1756758488/ESJB_frontend/q1bcisz3fammv4eeplar.png",
     tech: ["Next.js", "React", "TypeScript"],
-    demo: "https://teste.esjorgebarbosa.cv/",
+    demo: "https://esjorgebarbosa.cv/",
   },
   {
     title: "lodia Onariso- Landing Page",
